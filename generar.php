@@ -3,7 +3,7 @@ error_reporting(0);
 
 require 'phpspreadsheet/vendor/autoload.php';
 
-use \ConvertApi\ConvertApi;
+
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 $txtinsreact  = $_POST['txtinsreact'];
 $txtTipoDocumento = $_POST['txtTipoDocumento'];
