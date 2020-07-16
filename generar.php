@@ -2,7 +2,7 @@
 /**
  * Creado: Jordan Diaz Diaz
  * Uso: Inscripcion y Reactivacion SUNAT -Persona Natural
- * Fecha: 16/07/1988
+ * Fecha: 16/07/2020
  */
 
 error_reporting(0);
