@@ -1,4 +1,10 @@
 <?php
+/**
+ * Creado: Jordan Diaz Doaz
+ * Uso: Inscripcion y Reactivacion SUNAT -Persona Natural
+ * Fecha: 16/07/1988
+ */
+
 error_reporting(0);
 
 require 'phpspreadsheet/vendor/autoload.php';
@@ -14,7 +20,7 @@ $txtNombres = $_POST['txtNombres'];
 $txtFechaNacimiento = $_POST['txtFechaNacimiento'];
 $txtCorreo = $_POST['txtCorreo'];
 $txtCorreoRepetido = $_POST['txtCorreoRepetido'];
-$txttipodomicilio =  $_POST['tipodomicilio'];
+$txttipodomicilio =  $_POST['txttipodomicilio'];
 $txtDomicilioFiscal = $_POST['txtDomicilioFiscal'];
 $txtDistrito =  $_POST['txtDistrito'];
 $txtProvincia =  $_POST['txtProvincia'];
@@ -69,9 +75,9 @@ $worksheet->setCellValue('CI45', $dni[7]);
 $worksheet->setCellValue('G58', $txtPrimerApellido);
 $worksheet->setCellValue('BD58', $txtSegundoApellido);
 $worksheet->setCellValue('G63', $txtNombres);
-$worksheet->setCellValue('K70',$month);
-$worksheet->setCellValue('S70',  $day);
-$worksheet->setCellValue('AA70',$year);
+$worksheet->setCellValue('G69',$month);
+$worksheet->setCellValue('Q69',  $day);
+$worksheet->setCellValue('AA69',$year);
 $sexo = $txtSexo;
 
 if ($sexo == "MASCULINO") {
@@ -82,25 +88,22 @@ else
     $worksheet->setCellValue('BC69', 'X');
 }
 $worksheet->setCellValue('BS68', $txtPaisNacionalidad);
-$worksheet->setCellValue('G75', $txtDomicilioFiscal);
+$worksheet->setCellValue('H75', $txtDomicilioFiscal);
 $worksheet->setCellValue('H80', $txtDistrito);
-$worksheet->setCellValue('AN80', $txtProvincia);
-$worksheet->setCellValue('BT80', $txtDepartameno);
-
-
-
+$worksheet->setCellValue('AM80', $txtProvincia);
+$worksheet->setCellValue('BS80', $txtDepartameno);
 
 if ($txttipodomicilio == "PROPIO") {
-    $worksheet->setCellValue('H87', 'X');
+    $worksheet->setCellValue('K87', 'X');
 }
 if ($txttipodomicilio == "ALQUILADO") {
-    $worksheet->setCellValue('P87', 'X');
+    $worksheet->setCellValue('T87', 'X');
 }
 if ($txttipodomicilio == "CEDIDO") {
-    $worksheet->setCellValue('AJ87', 'X');
+    $worksheet->setCellValue('AF87', 'X');
 }
 if ($txttipodomicilio == "OTROS") {
-    $worksheet->setCellValue('AV87', 'X');
+    $worksheet->setCellValue('AT87', 'X');
 }
 
 
@@ -116,11 +119,15 @@ $worksheet->setCellValue('AR94', $txtTelefonoMovil[7]);
 $worksheet->setCellValue('AW94', $txtTelefonoMovil[8]);
 $worksheet->setCellValue('BE93', $txtActividadEconomica);
 $worksheet->setCellValue('AH101', 'X');
-$worksheet->setCellValue('CD101', 'X');
+$worksheet->setCellValue('CF101', 'X');
 $worksheet->setCellValue('CR122', 'X');
+$time = time();
+$worksheet->setCellValue('AI105', date("d", $time));
+$worksheet->setCellValue('AP105', date("m", $time));
+$worksheet->setCellValue('AW105', date("Y", $time));
 
 $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, "Xlsx");
-$archivo = $txtNumeroDocumento . "-GUIA_PERSONA_SIN_NEGOCIO_14052020.xlsx";
+$archivo = $txtNumeroDocumento.date("H-i-s", $time)."-GUIA_PERSONA_SIN_NEGOCIO_14052020.xlsx";
 $writer->save($archivo);
 echo '<a href="'.$archivo.'">Descargar GUIA_PERSONA_SIN_NEGOCIO_14052020</a>';
 ?>
