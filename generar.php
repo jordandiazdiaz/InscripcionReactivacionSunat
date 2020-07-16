@@ -1,6 +1,6 @@
 <?php
 /**
- * Creado: Jordan Diaz Doaz
+ * Creado: Jordan Diaz Diaz
  * Uso: Inscripcion y Reactivacion SUNAT -Persona Natural
  * Fecha: 16/07/1988
  */
