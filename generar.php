@@ -60,8 +60,7 @@ if ($txtTipoDocumento == "187") {
 }
 $dni = $txtNumeroDocumento;
 $fechanacimiento = $txtFechaNacimiento;
-$date =$fechanacimiento;
-list($month, $day, $year) = split('[/.-]', $date);
+$fecha_nacimiento = explode('/', $fechanacimiento);
 
 
 $worksheet->setCellValue('BN45', $dni[0]);
@@ -75,9 +74,9 @@ $worksheet->setCellValue('CI45', $dni[7]);
 $worksheet->setCellValue('G58', $txtPrimerApellido);
 $worksheet->setCellValue('BD58', $txtSegundoApellido);
 $worksheet->setCellValue('G63', $txtNombres);
-$worksheet->setCellValue('G69',$month);
-$worksheet->setCellValue('Q69',  $day);
-$worksheet->setCellValue('AA69',$year);
+$worksheet->setCellValue('G69',$fecha_nacimiento[0]);
+$worksheet->setCellValue('Q69',  $fecha_nacimiento[1]);
+$worksheet->setCellValue('AA69',$fecha_nacimiento[2]);
 $sexo = $txtSexo;
 
 if ($sexo == "MASCULINO") {
