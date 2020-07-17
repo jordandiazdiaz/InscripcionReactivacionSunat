@@ -18,7 +18,7 @@
     <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" ></script>
 </head>
 <body>
-    <form name="aspnetForm" method="post" action="./generar.php" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+    <form name="aspnetForm" method="post" action="./generar2.php" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
 <div>
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
@@ -95,98 +95,113 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
     <div class="panel-heading panel-heading-custom">Crear cuenta: Registrar los datos de contacto del sujeto obligado / grupo económico</div>
     <div class="panel-body">
         <div class="form-horizontal">
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Inscripción o Reactivación:<span class="field-required">*</span></label>
-                <div class="col-sm-5">
-                    <select name="txtinsreact" id="txtinsreact" class="form-control">
-	<option value="0">- Seleccione -</option>
-	<option value="INSCRIPCION">INSCRIPCION</option>
-	<option value="REACTIVACION">REACTIVACION</option>
-	
-
-</select>
-                    <span id="ctl00_cphBody_cvCargoSO" style="color:Red;display:none;">
-                        <em class="error-message">Seleccione condicion del Domicilio</em>
-                    </span>
-                    
-                    
-                </div>
-            </div>
-            <div class="form-group">
+            
+			<div class="form-group">
                 <label for="" class="col-sm-3 control-label">Tipo de documento:<span class="field-required">*</span></label>
                 <div class="col-sm-4">
                     <select name="txtTipoDocumento" id="txtTipoDocumento" class="form-control">
-	<option value="0">- Seleccione -</option>
-	<option value="3">Carnet de Extranjeria</option>
-	<option selected="selected" value="1">Documento Nacional de Identidad</option>
-	<option value="187">Pasaporte</option>
+                        <option value="0">- Seleccione -</option>
+                        <option value="3">Carnet de Extranjeria</option>
+                        <option selected="selected" value="1">Documento Nacional de Identidad</option>
+                        <option value="187">Pasaporte</option>
 
+                    </select>
+                    <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Seleccione el tipo de documento</em>
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                 <label for="" class="col-sm-3 control-label">Numero de Partida Registral:<span class="field-required">*</span></label>
+                <div class="col-sm-3">
+                    <input name="txtPartidaRegistral" type="text" maxlength="12" id="txtPartidaRegistral" class="form-control" placeholder="Partida Registral" />
+                </div>
+            </div>
+						<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Zona Registral:<span class="field-required">*</span></label>
+                <div class="col-sm-3">
+                    <input name="txtZonaRegistral" type="text" maxlength="12" id="txtZonaRegistral" class="form-control" placeholder="Zona Registral" />
+                </div>
+            </div>
+						<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Oficina Registral:<span class="field-required">*</span></label>
+                <div class="col-sm-3">
+                    <input name="txtOficinaRegistral" type="text" maxlength="12" id="txtOficinaRegistral" class="form-control" placeholder="Oficina Registral" />
+                </div>
+            </div>
+
+						<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Tipo de Representacion:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <select name="txtTipoRepresentacion" id="txtTipoRepresentacion" class="form-control">
+	<option value="0">- Seleccione -</option>
+	<option value="INDISTINTA">INDISTINTA</option>
+	<option value="CONJUNTA">CONJUNTA</option>
+	<option value="SUCESIVA">SUCESIVA</option>
 </select>
                     <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
                         <em class="error-message">Seleccione el tipo de documento</em>
                     </span>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Número de documento:<span class="field-required">*</span></label>
+					<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Origen de Capital:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <select name="txtOrigenCapital" id="txtOrigenCapital" class="form-control">
+	<option value="0">- Seleccione -</option>
+	<option value="INDISTINTA">NACIONAL</option>
+	<option value="CONJUNTA">EXTRANJERO</option>
+</select>
+                    <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Seleccione el tipo de documento</em>
+                    </span>
+                </div>
+            </div>
+ 						<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Pais:<span class="field-required">*</span></label>
                 <div class="col-sm-3">
-                    <input name="txtNumeroDocumento" type="text" maxlength="12" id="txtNumeroDocumento" class="form-control" placeholder="N° de Documento" />
-                    <span id="ctl00_cphBody_rfvNumeroDocumento" style="color:Red;display:none;">
-                        <em class="error-message">Ingrese el número de documento</em>
-                    </span>
-                    <span id="ctl00_cphBody_revRUC" style="color:Red;display:none;">
-                        <em class="error-message">El número de RUC debe contener 11 dígitos</em>
-                    </span>
-                    <span id="ctl00_cphBody_revDNI" style="color:Red;display:none;">
-                        <em class="error-message">El número de DNI debe contener 8 dígitos</em>
-                    </span>
-                    <span id="ctl00_cphBody_revPasaporte" style="color:Red;display:none;">
-                        <em class="error-message">El Número de Pasaporte o Número Carnet de Extranjería debe contener mínimo 3 caracteres y máximo 12 caracteres</em>
-                    </span>
+                    <input name="txtPais" type="text" maxlength="12" id="txtPais" class="form-control" placeholder="Pais" />
                 </div>
             </div>
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Primer apellido:<span class="field-required">*</span></label>
-                <div class="col-sm-4">
-                    <input name="txtPrimerApellido" type="text" maxlength="40" id="txtPrimerApellido" class="form-control" placeholder="Primer Apellido" />
-                    <span id="ctl00_cphBody_rfvPrimerApellido" style="color:Red;display:none;">
-                        <em class="error-message">Ingrese el primer apellido</em>
-                    </span>
+						<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Domicilio Fiscal:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDomicilioFiscal" type="text" maxlength="60" id="txtDomicilioFiscal" class="form-control" placeholder="" />
+                    
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Segundo apellido:</label>
-                <div class="col-sm-4">
-                    <input name="txtSegundoApellido" type="text" maxlength="40" id="txtSegundoApellido" class="form-control" placeholder="Segundo Apellido" />
+           </div>
+						<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Distrito:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDistrito" type="text" maxlength="60" id="txtDistrito" class="form-control" placeholder="" />
                     
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Nombres:<span class="field-required">*</span></label>
-                <div class="col-sm-4">
-                    <input name="txtNombres" type="text" maxlength="40" id="txtNombres" class="form-control" placeholder="Nombres" />
-                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
-                        <em class="error-message">Ingrese el nombre</em>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Fecha Nacimiento:<span class="field-required">*</span></label>
-                <div class="col-sm-4">
-                    <input name="txtFechaNacimiento" type="text" maxlength="40" id="txtFechaNacimiento" class="form-control" placeholder="28/07/1988" />
-                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
-                        <em class="error-message">Ingrese el Fecha Nacimiento</em>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Sexo:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Provincia:<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <select name="txtSexo" id="txtSexo" class="form-control">
+                    <input name="txtProvincia" type="text" maxlength="60" id="txtProvincia" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Departamento:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDepartameno" type="text" maxlength="60" id="txtDepartameno" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+					<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Condición del Domicilio:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <select name="txttipodomicilio" id="txttipodomicilio" class="form-control">
 	<option value="0">- Seleccione -</option>
-	<option value="MASCULINO">MASCULINO</option>
-	<option value="FEMENINO">FEMENINO</option>
-	
+	<option value="PROPIO">PROPIO</option>
+	<option value="ALQUILADO">ALQUILADO</option>
+	<option value="CEDIDO">CEDIDO</option>
+	<option value="OTROS">OTROS</option>
 
 </select>
                     <span id="ctl00_cphBody_cvCargoSO" style="color:Red;display:none;">
@@ -196,8 +211,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
                     
                 </div>
             </div>
-        
-            <div class="form-group">
+						<div class="form-group">
                 <label for="" class="col-sm-3 control-label">Correo electrónico:<span class="field-required">*</span></label>
                 <div class="col-sm-5">
                     <input name="txtCorreo" type="text" maxlength="60" id="txtCorreo" class="form-control" placeholder="nombre@dominio.com" />
@@ -224,45 +238,141 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
                     </span>
                 </div>
             </div>
+
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Pais de Nacionalidad:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Telefono Movil:<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <input name="txtPaisNacionalidad" type="text" maxlength="60" id="txtPaisNacionalidad" class="form-control" placeholder="" />
+                    <input name="txtTelefonoMovil" type="text" maxlength="60" id="txtTelefonoMovil" class="form-control" placeholder="" />
                     
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Domicilio Fiscal:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Actividad Economica:<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <input name="txtDomicilioFiscal" type="text" maxlength="60" id="txtDomicilioFiscal" class="form-control" placeholder="" />
+                    <input name="txtActividadEconomica" type="text" maxlength="60" id="txtActividadEconomica" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+						<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Tributos Afectos:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+								<input type="checkbox" id="txtRegimenGeneral" name="txtRegimenGeneral" value="REGIMEN GENERAL">
+  							<label for="txtRegimenGeneral">Regimen General</label><br>	
+								<input type="checkbox" id="txtRegimenEspecial" name="txtRegimenEspecial" value="REGIMEN ESPECIAL DE RENTA -RER">
+  							<label for="txtRegimenGeneral">Regimen Especial de Renta -RER</label><br>
+								<input type="checkbox" id="txtRegimenMype" name="txtRegimenMype" value="REGIMEN MYPE TRIBUTARIO -RMT">
+  							<label for="txtRegimenGeneral">Regimen Mype Tributario - RMT</label><br>
+                <label for="" class="col-sm-3 control-label">Otros:<span class="field-required">*</span></label>
+								<input name="txtOtrosTributos" type="text" maxlength="59" id="txtOtrosTributos" class="form-control" placeholder="Segun tabla Anexo Nº 1k0" />
+								</div>
+                
+            </div>
+
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Número de documento(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-3">
+                    <input name="txtNumeroDocumento" type="text" maxlength="12" id="txtNumeroDocumento" class="form-control" placeholder="N° de Documento" />
+                    <span id="ctl00_cphBody_rfvNumeroDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el número de documento</em>
+                    </span>
+                    <span id="ctl00_cphBody_revRUC" style="color:Red;display:none;">
+                        <em class="error-message">El número de RUC debe contener 11 dígitos</em>
+                    </span>
+                    <span id="ctl00_cphBody_revDNI" style="color:Red;display:none;">
+                        <em class="error-message">El número de DNI debe contener 8 dígitos</em>
+                    </span>
+                    <span id="ctl00_cphBody_revPasaporte" style="color:Red;display:none;">
+                        <em class="error-message">El Número de Pasaporte o Número Carnet de Extranjería debe contener mínimo 3 caracteres y máximo 12 caracteres</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Primer apellido(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtPrimerApellido" type="text" maxlength="40" id="txtPrimerApellido" class="form-control" placeholder="Primer Apellido" />
+                    <span id="ctl00_cphBody_rfvPrimerApellido" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el primer apellido</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Segundo apellido(Representante Legal):</label>
+                <div class="col-sm-4">
+                    <input name="txtSegundoApellido" type="text" maxlength="40" id="txtSegundoApellido" class="form-control" placeholder="Segundo Apellido" />
                     
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Distrito:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Nombres(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtNombres" type="text" maxlength="40" id="txtNombres" class="form-control" placeholder="Nombres" />
+                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el nombre</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Fecha Nacimiento(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtFechaNacimiento" type="text" maxlength="40" id="txtFechaNacimiento" class="form-control" placeholder="28/07/1988" />
+                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el Fecha Nacimiento</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Razon Social:<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <input name="txtDistrito" type="text" maxlength="60" id="txtDistrito" class="form-control" placeholder="" />
+                    <input name="txtRazonSocial" type="text" maxlength="60" id="txtRazonSocial" class="form-control" placeholder="En caso de persona juridica u otra entidad" />
+                    
+                </div>
+            </div>
+			<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Tipo de Cargo(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtTipoCargo" type="text" maxlength="60" id="txtTipoCargo" class="form-control" placeholder="Segun Tabla Anexa Nº 12" />
                     
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Provincia:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Fecha de Inicio del Cargo:<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <input name="txtProvincia" type="text" maxlength="60" id="txtProvincia" class="form-control" placeholder="" />
+                    <input name="txtFechaInicioCargo" type="text" maxlength="60" id="txtFechaInicioCargo" class="form-control" placeholder="12/05/2018" />
+                    
+                </div>
+            </div>
+	          <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Domicilio(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDomicilioRespresentante" type="text" maxlength="60" id="txtDomicilioRespresentante" class="form-control" placeholder="Domicilio Representante Legal" />
                     
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Departamento:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Distrito(Representante Legal):<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <input name="txtDepartameno" type="text" maxlength="60" id="txtDepartameno" class="form-control" placeholder="" />
+                    <input name="txtDistritoRepresentante" type="text" maxlength="60" id="txtDistritoRespresentantepresentante" class="form-control" placeholder="Distrito Representante Lega" />
                     
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Condición del Domicilio:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Provincia(Representante Legal):<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <select name="txttipodomicilio" id="txttipodomicilio" class="form-control">
+                    <input name="txtProvinciaRepresentante" type="text" maxlength="60" id="txtProvinciaRepresentante" class="form-control" placeholder="Provincia Representante Legal" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Departamento(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDepartamentoRepresentante" type="text" maxlength="60" id="txtDepartamentoRepresentante" class="form-control" placeholder="Departamento Representante Lega" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Condición del Domicilio(Representante Legal):<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <select name="txtCondicionDomicilio" id="txtCondicionDomicilio" class="form-control">
 	<option value="0">- Seleccione -</option>
 	<option value="PROPIO">PROPIO</option>
 	<option value="ALQUILADO">ALQUILADO</option>
@@ -277,88 +387,17 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
                     
                 </div>
             </div>
-
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Telefono Movil:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Correo Electronico(Representante Legal):<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <input name="txtTelefonoMovil" type="text" maxlength="60" id="txtTelefonoMovil" class="form-control" placeholder="" />
+                    <input name="txtCorreoRepresentante" type="text" maxlength="60" id="txtCorreoRepresentante" class="form-control" placeholder="Correo Representante Lega" />
                     
                 </div>
             </div>
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Actividad Economica:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Telefono Movil(Representante Legal):<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <select name="txtActividadEconomica" id="txtActividadEconomica" class="form-control">
-                         <option value="111-CULTIVO DE CEREALES (EXCEPTO ARROZ), LEGUMBRES Y SEMILLAS OLEAGINOSAS">111-CULTIVO DE CEREALES (EXCEPTO ARROZ), LEGUMBRES Y SEMILLAS OLEAGINOSAS</option>
-                         <option value="162-ACTIVIDADES DE APOYO A LA GANADERÍA">162-ACTIVIDADES DE APOYO A LA GANADERÍA</option>
-                         <option value="1071-ELABORACIÓN DE PRODUCTOS DE PANADERÍA.">1071-ELABORACIÓN DE PRODUCTOS DE PANADERÍA.</option>
-                         <option value="1410-FABRICACIÓN DE PRENDAS DE VESTIR, EXCEPTO PRENDAS DE PIEL">1410-FABRICACIÓN DE PRENDAS DE VESTIR, EXCEPTO PRENDAS DE PIEL</option>
-                         <option value="1520-FABRICACIÓN DE CALZADO">1520-FABRICACIÓN DE CALZADO</option>
-                         <option value="1811-IMPRESIÓN">1811-IMPRESIÓN</option>
-                         <option value="1812-ACTIVIDADES DE SERVICIOS RELACIONADAS CON LA IMPRESIÓN.">1812-ACTIVIDADES DE SERVICIOS RELACIONADAS CON LA IMPRESIÓN.</option>
-                         <option value="2511-FABRICACIÓN DE PRODUCTOS METÁLICOS PARA USO ESTRUCTURAL">2511-FABRICACIÓN DE PRODUCTOS METÁLICOS PARA USO ESTRUCTURAL</option>
-                         <option value="3100-FABRICACIÓN DE MUEBLES">3100-FABRICACIÓN DE MUEBLES</option>
-                         <option value="4100-CONSTRUCCIÓN DE EDIFICIOS">4100-CONSTRUCCIÓN DE EDIFICIOS</option>
-                         <option value="4321-INSTALACIONES ELÉCTRICAS">4321-INSTALACIONES ELÉCTRICAS</option>
-                         <option value="4330-TERMINACIÓN Y ACABADO DE EDIFICIOS">4330-TERMINACIÓN Y ACABADO DE EDIFICIOS</option>
-                         <option value="4520-MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS AUTOMOTORES">4520-MANTENIMIENTO Y REPARACIÓN DE VEHÍCULOS AUTOMOTORES</option>
-                         <option value="4530-VENTAS DE PARTES, PIEZAS Y ACCESORIOS DE VEHÍCULOS AUTOMOTORES.">4530-VENTAS DE PARTES, PIEZAS Y ACCESORIOS DE VEHÍCULOS AUTOMOTORES.</option>
-                         <option value="4730-VENTA AL POR MENOR DE COMBUSTIBLE PARA VEHÍCULOS AUTOMOTORES EN ALMACENES ESPECIALIZADOS.">4730-VENTA AL POR MENOR DE COMBUSTIBLE PARA VEHÍCULOS AUTOMOTORES EN ALMACENES ESPECIALIZADOS.</option>
-                         <option value="4610-VENTA AL POR MAYOR A CAMBIO DE UNA RETRIBUCIÓN O POR CONTRATA.">4610-VENTA AL POR MAYOR A CAMBIO DE UNA RETRIBUCIÓN O POR CONTRATA.</option>
-                         <option value="4630-VENTA AL POR MAYOR DE ALIMENTOS, BEBIDAS Y TABACO.">4630-VENTA AL POR MAYOR DE ALIMENTOS, BEBIDAS Y TABACO.</option>
-                         <option value="4641-VENTA AL POR MAYOR DE PRODUCTOS TEXTILES, PRENDAS DE VESTIR Y CALZADO.">4641-VENTA AL POR MAYOR DE PRODUCTOS TEXTILES, PRENDAS DE VESTIR Y CALZADO.</option>
-                         <option value="4663-VENTA AL POR MAYOR DE MATERIALES DE CONSTRUCCIÓN, ARTÍCULOS DE FERRETERÍA Y EQUIPO Y MATERIALES DE FONTANERÍA Y CALEFACCIÓN.">4663-VENTA AL POR MAYOR DE MATERIALES DE CONSTRUCCIÓN, ARTÍCULOS DE FERRETERÍA Y EQUIPO Y MATERIALES DE FONTANERÍA Y CALEFACCIÓN.</option>
-                         <option value="4690-VENTA AL POR MAYOR NO ESPECIALIZADA.">4690-VENTA AL POR MAYOR NO ESPECIALIZADA.</option>
-                         <option value="4711-VENTA AL POR MENOR EN ALMACENES NO ESPECIALIZADOS CON SURTIDO COMPUESTO PRINCIPALMENTE DE ALIMENTOS, BEBIDAS Y TABACO.">4711-VENTA AL POR MENOR EN ALMACENES NO ESPECIALIZADOS CON SURTIDO COMPUESTO PRINCIPALMENTE DE ALIMENTOS, BEBIDAS Y TABACO.</option>
-                         <option value="4719-VENTA AL POR MENOR DE OTROS PRODUCTOS EN ALMACENES NO ESPECIALIZADOS.">4719-VENTA AL POR MENOR DE OTROS PRODUCTOS EN ALMACENES NO ESPECIALIZADOS.</option>
-                         <option value="4721-VENTA AL POR MENOR DE ALIMENTOS EN COMERCIOS ESPECIALIZADOS">4721-VENTA AL POR MENOR DE ALIMENTOS EN COMERCIOS ESPECIALIZADOS</option>
-                         <option value="4772-VENTA AL POR MENOR DE PRODUCTOS FARMACÉUTICOS Y MEDICINALES, COSMÉTICOS Y ARTÍCULOS DE TOCADOR EN ALMACENES ESPECIALIZADOS.">4772-VENTA AL POR MENOR DE PRODUCTOS FARMACÉUTICOS Y MEDICINALES, COSMÉTICOS Y ARTÍCULOS DE TOCADOR EN ALMACENES ESPECIALIZADOS.</option>
-                         <option value="4751-VENTA AL POR MENOR DE PRODUCTOS TEXTILES EN COMERCIOS ESPECIALIZADOS">4751-VENTA AL POR MENOR DE PRODUCTOS TEXTILES EN COMERCIOS ESPECIALIZADOS</option>
-                         <option value="4759-VENTA AL POR MENOR DE APARATOS ELÉCTRICOS DE USO DOMÉSTICO, MUEBLES, EQUIPO DE ILUMINACIÓN Y OTROS ENSERES DOMÉSTICOS EN COMERCIOS ESPECIALIZADOS">4759-VENTA AL POR MENOR DE APARATOS ELÉCTRICOS DE USO DOMÉSTICO, MUEBLES, EQUIPO DE ILUMINACIÓN Y OTROS ENSERES DOMÉSTICOS EN COMERCIOS ESPECIALIZADOS</option>
-                         <option value="4752-VENTA AL POR MENOR DE ARTÍCULOS DE FERRETERÍA, PINTURAS Y PRODUCTOS DE VIDRIO EN ALMACENES ESPECIALIZADOS.">4752-VENTA AL POR MENOR DE ARTÍCULOS DE FERRETERÍA, PINTURAS Y PRODUCTOS DE VIDRIO EN ALMACENES ESPECIALIZADOS.</option>
-                         <option value="4753-VENTA AL POR MENOR DE TAPICES, ALFOMBRAS Y CUBRIMIENTOS PARA PAREDES Y PISOS EN COMERCIOS ESPECIALIZADOS">4753-VENTA AL POR MENOR DE TAPICES, ALFOMBRAS Y CUBRIMIENTOS PARA PAREDES Y PISOS EN COMERCIOS ESPECIALIZADOS</option>
-                         <option value="4781-VENTA AL POR MENOR DE ALIMENTOS, BEBIDAS Y TABACO EN PUESTOS DE VENTA Y MERCADOS">4781-VENTA AL POR MENOR DE ALIMENTOS, BEBIDAS Y TABACO EN PUESTOS DE VENTA Y MERCADOS</option>
-                         <option value="4799-OTRAS ACTIVIDADES DE VENTA AL POR MENOR NO REALIZADAS EN COMERCIOS, PUESTOS DE VENTA O MERCADOS">4799-OTRAS ACTIVIDADES DE VENTA AL POR MENOR NO REALIZADAS EN COMERCIOS, PUESTOS DE VENTA O MERCADOS</option>
-                         <option value="9522-REPARACIÓN DE APARATOS DE USO DOMÉSTICO Y EQUIPO DOMÉSTICO Y DE JARDINERÍA">9522-REPARACIÓN DE APARATOS DE USO DOMÉSTICO Y EQUIPO DOMÉSTICO Y DE JARDINERÍA</option>
-                         <option value="5510-ACTIVIDADES DE ALOJAMIENTO PARA ESTANCIAS CORTAS">5510-ACTIVIDADES DE ALOJAMIENTO PARA ESTANCIAS CORTAS</option>
-                         <option value="5610-ACTIVIDADES DE RESTAURANTES Y DE SERVICIO MÓVIL DE COMIDAS">5610-ACTIVIDADES DE RESTAURANTES Y DE SERVICIO MÓVIL DE COMIDAS</option>
-                         <option value="4921-TRANSPORTE URBANO Y SUBURBANO DE PASAJEROS POR VÍA TERRESTRE">4921-TRANSPORTE URBANO Y SUBURBANO DE PASAJEROS POR VÍA TERRESTRE</option>
-                         <option value="4922-OTROS TIPOS DE TRANSPORTE NO REGULAR DE PASAJEROS POR VÍA TERRESTRE.">4922-OTROS TIPOS DE TRANSPORTE NO REGULAR DE PASAJEROS POR VÍA TERRESTRE.</option>
-                         <option value="4923-TRANSPORTE DE CARGA POR CARRETERA.">4923-TRANSPORTE DE CARGA POR CARRETERA.</option>
-                         <option value="7911-ACTIVIDADES DE AGENCIAS DE VIAJES">7911-ACTIVIDADES DE AGENCIAS DE VIAJES</option>
-                         <option value="6810-ACTIVIDADES INMOBILIARIAS REALIZADAS CON BIENES PROPIOS O ARRENDADOS">6810-ACTIVIDADES INMOBILIARIAS REALIZADAS CON BIENES PROPIOS O ARRENDADOS</option>
-                         <option value="6201-PROGRAMACIÓN INFORMÁTICA">6201-PROGRAMACIÓN INFORMÁTICA</option>
-                         <option value="6311-PROCESAMIENTO DE DATOS, HOSPEDAJE Y ACTIVIDADES CONEXAS">6311-PROCESAMIENTO DE DATOS, HOSPEDAJE Y ACTIVIDADES CONEXAS</option>
-                         <option value="9511-REPARACIÓN DE ORDENADORES Y EQUIPO PERIFÉRICO">9511-REPARACIÓN DE ORDENADORES Y EQUIPO PERIFÉRICO</option>
-                         <option value="6209-OTROS SERVICIOS INFORMÁTICOS Y DE TECNOLOGÍAS DE LA INFORMACIÓN.">6209-OTROS SERVICIOS INFORMÁTICOS Y DE TECNOLOGÍAS DE LA INFORMACIÓN.</option>
-                         <option value="7220-INVESTIGACIONES Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LAS CIENCIAS SOCIALES Y LAS HUMANIDADES.">7220-INVESTIGACIONES Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LAS CIENCIAS SOCIALES Y LAS HUMANIDADES.</option>
-                         <option value="6910-ACTIVIDADES JURÍDICAS.">6910-ACTIVIDADES JURÍDICAS.</option>
-                         <option value="6920-ACTIVIDADES DE CONTABILIDAD, TENEDURÍA DE LIBROS Y AUDITORÍA; ASESORAMIENTO EN MATERIA DE IMPUESTOS.">6920-ACTIVIDADES DE CONTABILIDAD, TENEDURÍA DE LIBROS Y AUDITORÍA; ASESORAMIENTO EN MATERIA DE IMPUESTOS.</option>
-                         <option value="7020-ACTIVIDADES DE CONSULTORÍA DE GESTIÓN">7020-ACTIVIDADES DE CONSULTORÍA DE GESTIÓN</option>
-                         <option value="7110-ACTIVIDADES DE ARQUITECTURA E INGENIERÍA Y ACTIVIDADES CONEXAS DE CONSULTORÍA TÉCNICA">7110-ACTIVIDADES DE ARQUITECTURA E INGENIERÍA Y ACTIVIDADES CONEXAS DE CONSULTORÍA TÉCNICA</option>
-                         <option value="7310-PUBLICIDAD.">7310-PUBLICIDAD.</option>
-                         <option value="8020-ACTIVIDADES DE SERVICIO DE SISTEMAS DE SEGURIDAD">8020-ACTIVIDADES DE SERVICIO DE SISTEMAS DE SEGURIDAD</option>
-                         <option value="8129-OTRAS ACTIVIDADES DE LIMPIEZA DE EDIFICIOS E INSTALACIONES INDUSTRIALES">8129-OTRAS ACTIVIDADES DE LIMPIEZA DE EDIFICIOS E INSTALACIONES INDUSTRIALES</option>
-                         <option value="8299-OTRAS ACTIVIDADES DE SERVICIOS DE APOYO A LAS EMPRESAS N.C.P">8299-OTRAS ACTIVIDADES DE SERVICIOS DE APOYO A LAS EMPRESAS N.C.P</option>
-                         <option value="8411-ACTIVIDADES DE LA ADMINISTRACIÓN PÚBLICA EN GENERAL.">8411-ACTIVIDADES DE LA ADMINISTRACIÓN PÚBLICA EN GENERAL.</option>
-                         <option value="8510-ENSEÑANZA PRE-ESCOLAR Y PRIMARIA.">8510-ENSEÑANZA PRE-ESCOLAR Y PRIMARIA.</option>
-                         <option value="8521-ENSEÑANZA SECUNDARIA DE FORMACIÓN GENERAL.">8521-ENSEÑANZA SECUNDARIA DE FORMACIÓN GENERAL.</option>
-                         <option value="8530-ENSEÑANZA SUPERIOR.">8530-ENSEÑANZA SUPERIOR.</option>
-                         <option value="8549-OTROS TIPOS DE ENSEÑANZA N.C.P.">8549-OTROS TIPOS DE ENSEÑANZA N.C.P.</option>
-                         <option value="8620-ACTIVIDADES DE MÉDICOS Y ODONTÓLOGOS.">8620-ACTIVIDADES DE MÉDICOS Y ODONTÓLOGOS.</option>
-                         <option value="8690-OTRAS ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA">8690-OTRAS ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA</option>
-                         <option value="9499-ACTIVIDADES DE OTRAS ASOCIACIONES N.C.P.">9499-ACTIVIDADES DE OTRAS ASOCIACIONES N.C.P.</option>
-                         <option value="6020-PROGRAMACIÓN Y TRANSMISIONES DE TELEVISIÓN">6020-PROGRAMACIÓN Y TRANSMISIONES DE TELEVISIÓN</option>
-                         <option value="9000-ACTIVIDADES CREATIVAS, ARTÍSTICAS Y DE ENTRETENIMIENTO">9000-ACTIVIDADES CREATIVAS, ARTÍSTICAS Y DE ENTRETENIMIENTO</option>
-                         <option value="9312-ACTIVIDADES DE CLUBES DEPORTIVOS">9312-ACTIVIDADES DE CLUBES DEPORTIVOS</option>
-                         <option value="9602-PELUQUERÍA Y OTROS TRATAMIENTOS DE BELLEZA.">9602-PELUQUERÍA Y OTROS TRATAMIENTOS DE BELLEZA.</option>
-                        
-
-</select>
-                    <span id="ctl00_cphBody_cvCargoSO" style="color:Red;display:none;">
-                        <em class="error-message">Seleccione condicion del Domicilio</em>
-                    </span>
-                    
+                    <input name="txtTelefonoRepresentante" type="text" maxlength="60" id="txtTelefonoRepresentante" class="form-control" placeholder="Telefono Representante Lega" />
                     
                 </div>
             </div>
