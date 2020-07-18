@@ -12,6 +12,7 @@ require 'phpspreadsheet/vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 $txtinsreact  = $_POST['txtinsreact'];
+$txtNumeroSocios  = $_POST['txtNumeroSocios'];
 $txtTipoContribuyente = $_POST['txtTipoContribuyente'];
 $txtDenominacion = $_POST['txtDenominacion'];
 $txtPartidaRegistral = $_POST['txtPartidaRegistral'];
@@ -51,7 +52,39 @@ $txtTelefonoRepresentante = $_POST['txtTelefonoRepresentante'];
 $txtFechaInicioCargo = $_POST['txtFechaInicioCargo'];
 $txtCondicionDomicilio = $_POST['txtCondicionDomicilio'];
 
-$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_01.xlsx");
+if($txtNumeroSocios=="1"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_01.xlsx");
+}
+if($txtNumeroSocios=="2"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_02.xlsx");
+}
+if($txtNumeroSocios=="3"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_03.xlsx");
+}
+if($txtNumeroSocios=="4"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_04.xlsx");
+}
+if($txtNumeroSocios=="5"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_05.xlsx");
+}
+if($txtNumeroSocios=="6"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_06.xlsx");
+}
+if($txtNumeroSocios=="7"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_07.xlsx");
+}
+if($txtNumeroSocios=="8"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_08.xlsx");
+}
+if($txtNumeroSocios=="9"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_09.xlsx");
+}
+if($txtNumeroSocios=="10"){
+    $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load("GUIA_PERSONA_JURIDICA_14052020_10.xlsx");
+}
+setcookie("NumeroSocios",$txtNumeroSocios);
+
+
 $worksheet = $spreadsheet->getActiveSheet();
 
 if ($txtinsreact=="INSCRIPCION") {

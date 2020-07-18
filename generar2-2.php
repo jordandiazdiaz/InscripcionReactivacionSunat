@@ -170,5 +170,5 @@ $worksheet->setCellValue('KW97', $txtTelefonoMovil2[8]);
 $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, "Xlsx");
 $archivo = $txtNumeroDocumento_Anterior."-3-GUIA_PERSONA_JURIDICA_14052020_01.xlsx";
 $writer->save($archivo);
-echo '<a href="'.$archivo.'">Descargar GUIA_PERSONA_SIN_NEGOCIO_14052020</a>';
+echo '<a href="formulario2-3.html">Continuar con el Siguiente Formulario</a>';
 ?>
