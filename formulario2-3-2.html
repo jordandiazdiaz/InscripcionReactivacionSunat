@@ -92,7 +92,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
 
 <div class="panel-group">
 <div class="panel panel-default">
-    <div class="panel-heading panel-heading-custom">Datos Representante Legal Uno</div>
+    <div class="panel-heading panel-heading-custom">Informacion de la Persona Vinculada</div>
     <div class="panel-body">
         <div class="form-horizontal">          
 			<div class="form-group">
@@ -210,8 +210,125 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
                     
                 </div>
             </div>
-           
 
+
+            <div class="panel-heading panel-heading-custom">Informacion de la Persona Vinculada 2</div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Tipo de documento:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <select name="txtTipoDocumento2" id="txtTipoDocumento2" class="form-control">
+                        <option value="0">- Seleccione -</option>
+                        <option value="Carnet de Extranjeria<">Carnet de Extranjeria</option>
+                        <option selected="selected" value="Documento Nacional de Identidad">Documento Nacional de Identidad</option>
+                        <option value="Pasaporte">Pasaporte</option>
+
+                    </select>
+                    <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Seleccione el tipo de documento</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Número de documento:<span class="field-required">*</span></label>
+                <div class="col-sm-3">
+                    <input name="txtNumeroDocumento2" type="text" maxlength="12" id="txtNumeroDocumento2" class="form-control" placeholder="N° de Documento" />
+                    <span id="ctl00_cphBody_rfvNumeroDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el número de documento</em>
+                    </span>
+                    <span id="ctl00_cphBody_revRUC" style="color:Red;display:none;">
+                        <em class="error-message">El número de RUC debe contener 11 dígitos</em>
+                    </span>
+                    <span id="ctl00_cphBody_revDNI" style="color:Red;display:none;">
+                        <em class="error-message">El número de DNI debe contener 8 dígitos</em>
+                    </span>
+                    <span id="ctl00_cphBody_revPasaporte" style="color:Red;display:none;">
+                        <em class="error-message">El Número de Pasaporte o Número Carnet de Extranjería debe contener mínimo 3 caracteres y máximo 12 caracteres</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Primer apellido:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtPrimerApellido2" type="text" maxlength="40" id="txtPrimerApellido2" class="form-control" placeholder="Primer Apellido" />
+                    <span id="ctl00_cphBody_rfvPrimerApellido" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el primer apellido</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Segundo apellido:</label>
+                <div class="col-sm-4">
+                    <input name="txtSegundoApellido2" type="text" maxlength="40" id="txtSegundoApellido2" class="form-control" placeholder="Segundo Apellido" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Nombres:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtNombres2" type="text" maxlength="40" id="txtNombres2" class="form-control" placeholder="Nombres" />
+                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el nombre</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Fecha Nacimiento:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtFechaNacimiento2" type="text" maxlength="40" id="txtFechaNacimiento2" class="form-control" placeholder="28/07/1988" />
+                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el Fecha Nacimiento</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Pais de Residencia:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtPaisResidencia2" type="text" maxlength="60" id="txtPaisResidencia2" class="form-control" placeholder="En caso de persona juridica u otra entidad" />
+                    
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Razon Social:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtRazonSocial2" type="text" maxlength="60" id="txtRazonSocial2" class="form-control" placeholder="En caso de persona juridica u otra entidad" />
+                    
+                </div>
+            </div>            
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Tipo de Vehiculo:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <select name="txtTipoVehiculo2" id="txtTipoVehiculo2" class="form-control">
+                        <option value="0">- Seleccione -</option>
+                        <option value='1-Directores'>1-Directores</option>
+                        <option value='2-Miembros del consejo directivo'>2-Miembros del consejo directivo</option>
+                        <option value='3-Miembros de la sucesión'>3-Miembros de la sucesión</option>
+                        <option value='4-Cónyuge'>4-Cónyuge</option>
+                        <option value='5-Integrante'>5-Integrante</option>
+                        <option value='6-Socio'>6-Socio</option>
+                        <option value='7-Titular'>7-Titular</option>
+                        <option value='8-Fundador'>8-Fundador</option>
+                        <option value='9-Dirigente'>9-Dirigente</option>
+                        <option value='10-Representante de directivos'>10-Representante de directivos</option>
+                        <option value='11-Representante de trabajadores'>11-Representante de trabajadores</option>
+                        <option value='12-Miembro de la Junta Directiva'>12-Miembro de la Junta Directiva</option>
+                        <option value='13-Arrendador'>13-Arrendador</option>
+
+
+                    </select>
+                    <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Seleccione el tipo de documento</em>
+                    </span>
+                </div>
+            </div>          
+
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Porcentaje de Participacion:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtPorcentajeParticipacion2" type="text" maxlength="60" id="txtPorcentajeParticipacion2" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+                 
             <div class="form-group">
                 <label for="" class="col-sm-3 control-label"></label>
                 <div class="col-sm-4 " >
@@ -221,6 +338,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
                     <input type="submit" name="ctl00$cphBody$btnCancelar" value="Cancelar" id="ctl00_cphBody_btnCancelar" class="btn " />
                 </div>
             </div>
+
         </div>
     </div>
 </div>

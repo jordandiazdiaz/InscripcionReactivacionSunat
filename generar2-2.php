@@ -28,6 +28,7 @@ $txtCorreo  = $_POST['txtCorreo'];
 $txtTelefonoMovil  = $_POST['txtTelefonoMovil'];
 
 $txtNumeroDocumento_Anterior = $_COOKIE["NumeroDocumento2"];
+$NumeroSocios = $_COOKIE["NumeroSocios"];
 print "Archivo: ".$txtNumeroDocumento_Anterior;
 $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($txtNumeroDocumento_Anterior."-2-GUIA_PERSONA_JURIDICA_14052020_01.xlsx");
 $worksheet = $spreadsheet->getActiveSheet();
@@ -170,5 +171,37 @@ $worksheet->setCellValue('KW97', $txtTelefonoMovil2[8]);
 $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, "Xlsx");
 $archivo = $txtNumeroDocumento_Anterior."-3-GUIA_PERSONA_JURIDICA_14052020_01.xlsx";
 $writer->save($archivo);
-echo '<a href="formulario2-3.html">Continuar con el Siguiente Formulario</a>';
+switch ($NumeroSocios) {
+    case "1":
+        echo '<a href="formulario2-3.html">Continuar con el Siguiente Formulario</a>';
+        break;
+    case "2":
+        echo '<a href="formulario2-3-2.html">Continuar con el Siguiente Formulario</a>';
+        break;
+    case "3":
+        echo '<a href="formulario2-3-3.html">Continuar con el Siguiente Formulario</a>';
+        break;
+    case "4":
+        echo '<a href="formulario2-3-4.html">Continuar con el Siguiente Formulario</a>';
+        break;  
+    case "5":
+        echo '<a href="formulario2-3-5.html">Continuar con el Siguiente Formulario</a>';
+        break;       
+    case "6":
+        echo '<a href="formulario2-3-6.html">Continuar con el Siguiente Formulario</a>';
+        break;
+    case "7":
+        echo '<a href="formulario2-3-7.html">Continuar con el Siguiente Formulario</a>';
+        break;            
+    case "8":
+        echo '<a href="formulario2-3-8.html">Continuar con el Siguiente Formulario</a>';
+        break;
+    case "9":
+        echo '<a href="formulario2-3-9.html">Continuar con el Siguiente Formulario</a>';
+        break;
+    case "10":
+        echo '<a href="formulario2-3-10.html">Continuar con el Siguiente Formulario</a>';
+        break;                       
+}
+
 ?>
