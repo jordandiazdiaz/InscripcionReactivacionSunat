@@ -188,9 +188,12 @@ $worksheet->setCellValue('CQ148', $txtTelefonoRepresentante[6]);
 $worksheet->setCellValue('CS148', $txtTelefonoRepresentante[7]);
 $worksheet->setCellValue('CU148', $txtTelefonoRepresentante[8]);
 
+//Variable dni ira a una variable de session para poder ser usado en el segundo formulario
+setcookie("NumeroDocumento",$txtNumeroDocumento);
 
 $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, "Xlsx");
 $archivo = $txtNumeroDocumento."-GUIA_PERSONA_JURIDICA_14052020_01.xlsx";
 $writer->save($archivo);
-//cho '<a href="'.$archivo.'">Descargar GUIA_PERSONA_SIN_NEGOCIO_14052020</a>';
+
+echo '<a href="formulario2-1.html">Continuar con el Siguiente Formulario</a>';
 ?>

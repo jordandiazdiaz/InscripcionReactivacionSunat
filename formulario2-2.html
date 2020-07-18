@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /><title>
-	PROCONT :: INFORMACION DE LA PERSONA VINCULADA
+	PROCONT :: REPRESENTANTES LEGALES
 </title><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap/bootstrap.min.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/site.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap-typeahead.css" rel="stylesheet" />
     
     <!--[if lte IE 8]>        
@@ -18,7 +18,7 @@
     <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" ></script>
 </head>
 <body>
-    <form name="aspnetForm" method="post" action="./generar2-1.php" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+    <form name="aspnetForm" method="post" action="./generar2-2.php" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
 <div>
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
@@ -74,7 +74,7 @@ return true;
         <nav class="navbar navbar-light navbar-cabecera" >
         <div class="container-fluid" >
             <div class="navbar-header navbar-header-custom" >
-                <h4><a href="InicioSesion.aspx"><span style="color:#fff" class="glyphicon glyphicon-home" aria-hidden="true"></span></a> PROCONT :: INFORMACION DE LA PERSONA VINCULADA
+                <h4><a href="InicioSesion.aspx"><span style="color:#fff" class="glyphicon glyphicon-home" aria-hidden="true"></span></a> PROCONT :: REPRESENTANTES LEGALES
                 </h4>
             </div>
         </div>
@@ -92,18 +92,17 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
 
 <div class="panel-group">
 <div class="panel panel-default">
-    <div class="panel-heading panel-heading-custom">Crear cuenta: Registrar los datos de contacto del sujeto obligado / grupo económico</div>
+    <div class="panel-heading panel-heading-custom">Datos Representante Legal Uno</div>
     <div class="panel-body">
-        <div class="form-horizontal">
-            
+        <div class="form-horizontal">          
 			<div class="form-group">
                 <label for="" class="col-sm-3 control-label">Tipo de documento:<span class="field-required">*</span></label>
                 <div class="col-sm-4">
                     <select name="txtTipoDocumento" id="txtTipoDocumento" class="form-control">
                         <option value="0">- Seleccione -</option>
-                        <option value="3">Carnet de Extranjeria</option>
-                        <option selected="selected" value="1">Documento Nacional de Identidad</option>
-                        <option value="187">Pasaporte</option>
+                        <option value="Carnet de Extranjeria<">Carnet de Extranjeria</option>
+                        <option selected="selected" value="Documento Nacional de Identidad">Documento Nacional de Identidad</option>
+                        <option value="Pasaporte">Pasaporte</option>
 
                     </select>
                     <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
@@ -169,68 +168,74 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
                     <input name="txtRazonSocial" type="text" maxlength="60" id="txtRazonSocial" class="form-control" placeholder="En caso de persona juridica u otra entidad" />
                     
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Pais Recidencia:<span class="field-required">*</span></label>
-                <div class="col-sm-3">
-                    <input name="txtPaisRecidencia" type="text" maxlength="12" id="txtPaisRecidencia" class="form-control" placeholder="Pais" />
-                </div>
-            </div> 
+            </div>            
 			<div class="form-group">
-                <label for="" class="col-sm-3 control-label">Tipo de Vehiculo:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Tipo de Cargo:<span class="field-required">*</span></label>
                 <div class="col-sm-4">
-                    <select name="txtTipoVehiculo" id="txtTipoVehiculo" class="form-control">
+                    <select name="txtTipoCargo" id="txtTipoCargo" class="form-control">
                         <option value="0">- Seleccione -</option>
-                        <option value='1-Directores'>1-Directores</option>
-                        <option value='2-Miembros del consejo directivo'>2-Miembros del consejo directivo</option>
-                        <option value='3-Miembros de la sucesión'>3-Miembros de la sucesión</option>
-                        <option value='4-Cónyuge'>4-Cónyuge</option>
-                        <option value='5-Integrante'>5-Integrante</option>
-                        <option value='6-Socio'>6-Socio</option>
-                        <option value='7-Titular'>7-Titular</option>
-                        <option value='8-Fundador'>8-Fundador</option>
-                        <option value='9-Dirigente'>9-Dirigente</option>
-                        <option value='10-Representante de directivos'>10-Representante de directivos</option>
-                        <option value='11-Representante de trabajadores'>11-Representante de trabajadores</option>
-                        <option value='12-Miembro de la Junta Directiva'>12-Miembro de la Junta Directiva</option>
-                        <option value='13-Arrendador'>13-Arrendador</option>
-
-
+                        <option value="1-Administrador">1-Administrador</option>
+                        <option value="2-Administrador Judicial">2-Administrador Judicial</option>
+                        <option value="3-Albacea">3-Albacea</option>
+                        <option value="4-Alcalde">4-Alcalde</option>
+                        <option value="5-Apoderado">5-Apoderado</option>
+                        <option value="7-Contador">7-Contador</option>
+                        <option value="8-Coordinador">8-Coordinador</option>
+                        <option value="9-Curador">9-Curador</option>
+                        <option value="10-Decano">10-Decano</option>
+                        <option value="11-Director">11-Director</option>
+                        <option value="12-Director (centro de estudios)">12-Director (centro de estudios)</option>
+                        <option value="13-Director Ejecutivo">13-Director Ejecutivo</option>
+                        <option value="14-Director General">14-Director General</option>
+                        <option value="15-Director Municipal">15-Director Municipal</option>
+                        <option value="16-Embajador">16-Embajador</option>
+                        <option value="17-Factor">17-Factor</option>
+                        <option value="19-Gerente">19-Gerente</option>
+                        <option value="20-Gerente Ejecutivo">20-Gerente Ejecutivo</option>
+                        <option value="21-Gerente General">21-Gerente General</option>
+                        <option value="22-Gestor de Empresas">22-Gestor de Empresas</option>
+                        <option value="23-Heredero">23-Heredero</option>
+                        <option value="24-Intendente">24-Intendente</option>
+                        <option value="25-Jefe">25-Jefe</option>
+                        <option value="26-Liquidador">26-Liquidador</option>
+                        <option value="27-Mandatario">27-Mandatario</option>
+                        <option value="28-Ministro">28-Ministro</option>
+                        <option value="29-Presidente">29-Presidente</option>
+                        <option value="30-Presidente Consejo de Vigilancia">30-Presidente Consejo de Vigilancia</option>
+                        <option value="31-Presidente Consejo Administración">31-Presidente Consejo Administración</option>
+                        <option value="32-Presidente Directorio">32-Presidente Directorio</option>
+                        <option value="33-Presidente Ejecutivo">33-Presidente Ejecutivo</option>
+                        <option value="34-Procurador">34-Procurador</option>
+                        <option value="35-Promotor">35-Promotor</option>
+                        <option value="36-Regidor">36-Regidor</option>
+                        <option value="37-Representante no domiciliado">37-Representante no domiciliado</option>
+                        <option value="38-Representante religioso">38-Representante religioso</option>
+                        <option value="39-Representante de universidades">39-Representante de universidades</option>
+                        <option value="40-Secretario">40-Secretario</option>
+                        <option value="41-Síndico">41-Síndico</option>
+                        <option value="42-Sub director">42-Sub director</option>
+                        <option value="43-Sub gerente">43-Sub gerente</option>
+                        <option value="44-Superintendente">44-Superintendente</option>
+                        <option value="45-Teniente alcalde">45-Teniente alcalde</option>
+                        <option value="46-Tesorero">46-Tesorero</option>
+                        <option value="47-Tutor">47-Tutor</option>
+                        <option value="48-Vicepresidente">48-Vicepresidente</option>
+                        <option value="49-Vice decano">49-Vice decano</option>
+                        <option value="50-Vocal">50-Vocal</option>
+                        <option value="51-Titular gerente">51-Titular gerente</option>
+                        <option value="52-Socio Administrador">52-Socio Administrador</option>
+                        <option value="998-Otros persona jurídica">998-Otros persona jurídica</option>
+                        <option value="999-Otros persona natural">999-Otros persona natural</option>
                     </select>
                     <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
                         <em class="error-message">Seleccione el tipo de documento</em>
                     </span>
                 </div>
-            </div>
+            </div>          
             <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Porcentaje de Participacion:<span class="field-required">*</span></label>
-                <div class="col-sm-3">
-                    <input name="txtPorcentajeParticipacion" type="text" maxlength="12" id="txtPorcentajeParticipacion" class="form-control" placeholder="Porcentaje de Participacion" />
-                </div>
-            </div> 
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Tipo de Establecimiento:<span class="field-required">*</span></label>
-                <div class="col-sm-4">
-                    <select name="txtTipoEstablecimiento" id="txtTipoEstablecimiento" class="form-control">
-                        <option value="0">- Seleccione -</option>
-                        <option value="CASA MATRIZ">CASA MATRIZ</option>                        
-                        <option value="AGENCIA">AGENCIA</option>
-                        <option value="DEPOSITO O ALMACEN">DEPOSITO O ALMACEN</option>
-                        <option value="SUCURSAL">SUCURSAL</option>
-                        <option value="SEDE PRODUCTIVA">SEDE PRODUCTIVA</option>
-                        <option value="OFICIA ADMINISTRATIVA">OFICIA ADMINISTRATIVA</option>
-                        <option value="LOCAL COMERCIAL O DE SERVICIOS">LOCAL COMERCIAL O DE SERVICIOS</option>
-
-                    </select>
-                    <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
-                        <em class="error-message">Seleccione el tipo de documento</em>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="col-sm-3 control-label">Direccion de Establecimiento:<span class="field-required">*</span></label>
+                <label for="" class="col-sm-3 control-label">Domicilio:<span class="field-required">*</span></label>
                 <div class="col-sm-5">
-                    <input name="txtDireccionEstablecimiento" type="text" maxlength="60" id="txtDireccionEstablecimiento" class="form-control" placeholder="" />
+                    <input name="txtDomicilio" type="text" maxlength="60" id="txtDomicilio" class="form-control" placeholder="" />
                     
                 </div>
             </div>
@@ -274,7 +279,220 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'asp
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Correo:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtCorreo" type="text" maxlength="60" id="txtCorreo" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Telefono Movil:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtTelefonoMovil" type="text" maxlength="60" id="txtTelefonoMovil" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="panel-heading panel-heading-custom">Datos Representante Legal Dos</div>
 
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Tipo de documento:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <select name="txtTipoDocumento2" id="txtTipoDocumento2" class="form-control">
+                        <option value="0">- Seleccione -</option>
+                        <option value="3">Carnet de Extranjeria</option>
+                        <option selected="selected" value="1">Documento Nacional de Identidad</option>
+                        <option value="187">Pasaporte</option>
+
+                    </select>
+                    <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Seleccione el tipo de documento</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Número de documento:<span class="field-required">*</span></label>
+                <div class="col-sm-3">
+                    <input name="txtNumeroDocumento2" type="text" maxlength="12" id="txtNumeroDocumento2" class="form-control" placeholder="N° de Documento" />
+                    <span id="ctl00_cphBody_rfvNumeroDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el número de documento</em>
+                    </span>
+                    <span id="ctl00_cphBody_revRUC" style="color:Red;display:none;">
+                        <em class="error-message">El número de RUC debe contener 11 dígitos</em>
+                    </span>
+                    <span id="ctl00_cphBody_revDNI" style="color:Red;display:none;">
+                        <em class="error-message">El número de DNI debe contener 8 dígitos</em>
+                    </span>
+                    <span id="ctl00_cphBody_revPasaporte" style="color:Red;display:none;">
+                        <em class="error-message">El Número de Pasaporte o Número Carnet de Extranjería debe contener mínimo 3 caracteres y máximo 12 caracteres</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Primer apellido:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtPrimerApellido2" type="text" maxlength="40" id="txtPrimerApellido2" class="form-control" placeholder="Primer Apellido" />
+                    <span id="ctl00_cphBody_rfvPrimerApellido" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el primer apellido</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Segundo apellido:</label>
+                <div class="col-sm-4">
+                    <input name="txtSegundoApellido2" type="text" maxlength="40" id="txtSegundoApellido2" class="form-control" placeholder="Segundo Apellido" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Nombres:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtNombres2" type="text" maxlength="40" id="txtNombres2" class="form-control" placeholder="Nombres" />
+                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el nombre</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Fecha Nacimiento:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <input name="txtFechaNacimiento2" type="text" maxlength="40" id="txtFechaNacimiento2" class="form-control" placeholder="28/07/1988" />
+                    <span id="ctl00_cphBody_rfvNombres" style="color:Red;display:none;">
+                        <em class="error-message">Ingrese el Fecha Nacimiento</em>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Razon Social:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtRazonSocial2" type="text" maxlength="60" id="txtRazonSocial2" class="form-control" placeholder="En caso de persona juridica u otra entidad" />
+                    
+                </div>
+            </div>            
+			<div class="form-group">
+                <label for="" class="col-sm-3 control-label">Tipo de Cargo:<span class="field-required">*</span></label>
+                <div class="col-sm-4">
+                    <select name="txtTipoCargo2" id="txtTipoCargo2" class="form-control">
+                        <option value="0">- Seleccione -</option>
+                        <option value="1-Administrador">1-Administrador</option>
+                        <option value="2-Administrador Judicial">2-Administrador Judicial</option>
+                        <option value="3-Albacea">3-Albacea</option>
+                        <option value="4-Alcalde">4-Alcalde</option>
+                        <option value="5-Apoderado">5-Apoderado</option>
+                        <option value="7-Contador">7-Contador</option>
+                        <option value="8-Coordinador">8-Coordinador</option>
+                        <option value="9-Curador">9-Curador</option>
+                        <option value="10-Decano">10-Decano</option>
+                        <option value="11-Director">11-Director</option>
+                        <option value="12-Director (centro de estudios)">12-Director (centro de estudios)</option>
+                        <option value="13-Director Ejecutivo">13-Director Ejecutivo</option>
+                        <option value="14-Director General">14-Director General</option>
+                        <option value="15-Director Municipal">15-Director Municipal</option>
+                        <option value="16-Embajador">16-Embajador</option>
+                        <option value="17-Factor">17-Factor</option>
+                        <option value="19-Gerente">19-Gerente</option>
+                        <option value="20-Gerente Ejecutivo">20-Gerente Ejecutivo</option>
+                        <option value="21-Gerente General">21-Gerente General</option>
+                        <option value="22-Gestor de Empresas">22-Gestor de Empresas</option>
+                        <option value="23-Heredero">23-Heredero</option>
+                        <option value="24-Intendente">24-Intendente</option>
+                        <option value="25-Jefe">25-Jefe</option>
+                        <option value="26-Liquidador">26-Liquidador</option>
+                        <option value="27-Mandatario">27-Mandatario</option>
+                        <option value="28-Ministro">28-Ministro</option>
+                        <option value="29-Presidente">29-Presidente</option>
+                        <option value="30-Presidente Consejo de Vigilancia">30-Presidente Consejo de Vigilancia</option>
+                        <option value="31-Presidente Consejo Administración">31-Presidente Consejo Administración</option>
+                        <option value="32-Presidente Directorio">32-Presidente Directorio</option>
+                        <option value="33-Presidente Ejecutivo">33-Presidente Ejecutivo</option>
+                        <option value="34-Procurador">34-Procurador</option>
+                        <option value="35-Promotor">35-Promotor</option>
+                        <option value="36-Regidor">36-Regidor</option>
+                        <option value="37-Representante no domiciliado">37-Representante no domiciliado</option>
+                        <option value="38-Representante religioso">38-Representante religioso</option>
+                        <option value="39-Representante de universidades">39-Representante de universidades</option>
+                        <option value="40-Secretario">40-Secretario</option>
+                        <option value="41-Síndico">41-Síndico</option>
+                        <option value="42-Sub director">42-Sub director</option>
+                        <option value="43-Sub gerente">43-Sub gerente</option>
+                        <option value="44-Superintendente">44-Superintendente</option>
+                        <option value="45-Teniente alcalde">45-Teniente alcalde</option>
+                        <option value="46-Tesorero">46-Tesorero</option>
+                        <option value="47-Tutor">47-Tutor</option>
+                        <option value="48-Vicepresidente">48-Vicepresidente</option>
+                        <option value="49-Vice decano">49-Vice decano</option>
+                        <option value="50-Vocal">50-Vocal</option>
+                        <option value="51-Titular gerente">51-Titular gerente</option>
+                        <option value="52-Socio Administrador">52-Socio Administrador</option>
+                        <option value="998-Otros persona jurídica">998-Otros persona jurídica</option>
+                        <option value="999-Otros persona natural">999-Otros persona natural</option>
+                    </select>
+                    <span id="ctl00_cphBody_cvTipoDocumento" style="color:Red;display:none;">
+                        <em class="error-message">Seleccione el tipo de documento</em>
+                    </span>
+                </div>
+            </div>          
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Domicilio:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDomicilio2" type="text" maxlength="60" id="txtDomicilio2" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Distrito:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDistrito2" type="text" maxlength="60" id="txtDistrito2" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Provincia:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtProvincia2" type="text" maxlength="60" id="txtProvincia2" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Departamento:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtDepartameno2" type="text" maxlength="60" id="txtDepartameno2" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Condición del Domicilio:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <select name="txttipodomicilio2" id="txttipodomicilio2" class="form-control">
+                        <option value="0">- Seleccione -</option>
+                        <option value="PROPIO">PROPIO</option>
+                        <option value="ALQUILADO">ALQUILADO</option>
+                        <option value="CEDIDO">CEDIDO</option>
+                        <option value="OTROS">OTROS</option>
+
+                    </select>
+                    <span id="ctl00_cphBody_cvCargoSO" style="color:Red;display:none;">
+                        <em class="error-message">Seleccione condicion del Domicilio</em>
+                    </span>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Correo:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtCorreo2" type="text" maxlength="60" id="txtCorreo2" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Telefono Movil:<span class="field-required">*</span></label>
+                <div class="col-sm-5">
+                    <input name="txtTelefonoMovil2" type="text" maxlength="60" id="txtTelefonoMovil2" class="form-control" placeholder="" />
+                    
+                </div>
+            </div>
 
 
             <div class="form-group">
