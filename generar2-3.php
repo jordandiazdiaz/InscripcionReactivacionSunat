@@ -16,10 +16,10 @@ $txtNumeroDocumento_Anterior = $_COOKIE["NumeroDocumento2"];
 $NumeroSocios = $_COOKIE["NumeroSocios"];
 $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($txtNumeroDocumento_Anterior."-3-GUIA_PERSONA_JURIDICA_14052020_01.xlsx");
 $worksheet = $spreadsheet->getActiveSheet();
+$NumeroSocios = $_COOKIE["NumeroSocios"];
 
 
-
-if($txtNumeroDocumento=="1"){
+if($NumeroSocios=="1"){
     $txtTipoDocumento  = $_POST['txtTipoDocumento'];
     $txtNumeroDocumento  = $_POST['txtNumeroDocumento'];
     $txtPrimerApellido  = $_POST['txtPrimerApellido'];
@@ -66,7 +66,7 @@ if($txtNumeroDocumento=="1"){
     $worksheet->setCellValue('OV34', date("Y", $time));
     $worksheet->setCellValue('MD39', $txtPorcentajeParticipacion);
 }
-if($txtNumeroDocumento=="2"){
+if($NumeroSocios=="2"){
     $txtTipoDocumento  = $_POST['txtTipoDocumento'];
     $txtTipoDocumento  = $_POST['txtTipoDocumento'];
     $txtNumeroDocumento  = $_POST['txtNumeroDocumento'];
@@ -163,7 +163,7 @@ if($txtNumeroDocumento=="2"){
 
     
 }
-if($txtNumeroDocumento=="3"){
+if($NumeroSocios=="3"){
     $txtTipoDocumento  = $_POST['txtTipoDocumento'];
     $txtTipoDocumento  = $_POST['txtTipoDocumento'];
     $txtNumeroDocumento  = $_POST['txtNumeroDocumento'];
