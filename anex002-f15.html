@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <title>
+        PROCONT :: DECLARACIÓN JURADA
+    </title>
+    <link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap/bootstrap.min.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/site.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap-typeahead.css" rel="stylesheet" />
+    
+    <!--[if lte IE 8]>        
+       <script src="/sisdel/js/html5shiv.js"></script>
+       <script src="/sisdel/js/respond.min.js"></script>  
+    <![endif]-->
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/bootstrap-typeahead.min.js"></script>    
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/jquery.alphanum.js"></script>
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/site.js"></script>    
+    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" ></script>
+    <style>
+        .w-small {
+            display: inline;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid navbar-custom" >
+            <div class="navbar-logo" >                
+                <img alt="Logo" src="logo.jpg" width="1100" height="124" />
+            </div>                    
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-light navbar-cabecera" >
+        <div class="container-fluid" >
+            <div class="navbar-header navbar-header-custom" >
+                <h4><a href="InicioSesion.aspx"><span style="color:#fff" class="glyphicon glyphicon-home" aria-hidden="true"></span></a> PROCONT :: DECLARACIÓN JURADA
+                </h4>
+            </div>
+        </div>
+        </nav>
+        <form action="generar-anexo002-f15.php" method="post">
+            <div class="panel-group">
+
+                <!--Panel: Declaración Jurada-->
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">
+                        <h2>Declaración Juarada</h2>
+                        <p class="muted">Los suctritos declaramos bajo juramento, cumplir con los requisitos establecidos en los numerales 37.4, 37.5 y 37.7 del artículo 37° del D.S. 017-2009-MTC.</p>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Apellidos y Nombres</th>
+                                    <th>Cargo</th>
+                                    <th>N° de D.N.I.</th>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="addRow()">+ FILA</button>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody id="vehiculos_ofertados">
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <input type="text" class="form-control" name="nombres[]" id="nombres1" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" name="cargo[]" id="cargo1" required>
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-control" name="dni[]" id="dni1" required>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow()">QUITAR</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            <p>
+                                Lo declarado se sujeta a lo señalado en el artículo 33° del Texto Único Ordenado de la Ley N° 27444, Ley del Procedimiento Administrativo General, aprobado por Decreto Supremo N° 006-2017-JUS y demás normas pertinentes.																																																																																										
+                            </p>
+                        </div>
+                        <div class="form-group inline">
+                                Lima, <input type="text" class="form-control w-small" name="dia" id="dia" required placeholder="1,2,3, ... 31">
+                                de <select name="mes" id="mes" class="form-control w-small">
+                                    <option value="0" disabled selected>Mes</option>
+                                    <option value="enero">Enero</option>
+                                    <option value="febrero">Febrero</option>
+                                    <option value="marzo">Marzo</option>
+                                    <option value="abril">Abril</option>
+                                    <option value="mayo">Mayo</option>
+                                    <option value="junio">Junio</option>
+                                    <option value="julio">Julio</option>
+                                    <option value="agosto">Agosto</option>
+                                    <option value="setiembre">Setiembre</option>
+                                    <option value="octubre">Octubre</option>
+                                    <option value="noviembre">Noviembre</option>
+                                    <option value="diciembre">Diciembre</option>
+                                </select>
+                                de 20 <input type="text" class="form-control w-small" name="anio" id="anio" required placeholder="20">
+                        </div>
+
+                        <!--<div class="form-group">
+                            <label class="col-sm-6 control-label" for="solicita_nombres">Nombres y Apellidos</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="solicita_nombres" id="solicita_nombres" class="form-control" required>
+                            </div>
+                        </div>																																																																										
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label" for="solicita_dni">D.N.I.</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="solicita_dni" id="solicita_dni" class="form-control" required>
+                            </div>
+                        </div>-->
+
+                        <div class="form-group">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-sm btn-success">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </form>   
+    </div>
+
+    <script>
+        const vehiculosOfertados = document.getElementById('vehiculos_ofertados')
+
+        function addRow() {
+            
+            let row = document.createElement('tr')
+            let rows = vehiculosOfertados.getElementsByTagName('tr').length;
+
+            vehiculosOfertados.appendChild(row)
+            
+            let tdItem = document.createElement('td')
+            row.appendChild(tdItem)
+
+            //Item input
+            /*let inputItem = document.createElement('input')
+            inputItem.type = 'text'
+            inputItem.className = 'form-control'
+            inputItem.id = 'item' + (rows + 1)
+            inputItem.name = 'item'
+            inputItem.value = rows + 1
+            inputItem.readOnly = true*/
+
+            tdItem.textContent = rows + 1
+
+            //Nombres input
+            let tdNombre = document.createElement('td')
+            row.appendChild(tdNombre)
+
+            let inputNombre = document.createElement('input')
+            inputNombre.type = 'text'
+            inputNombre.className = 'form-control'
+            inputNombre.id = 'nombres' + (rows + 1)
+            inputNombre.name = 'nombres[]'
+
+            tdNombre.appendChild(inputNombre)
+
+            //Cargo input
+            let tdCargo = document.createElement('td')
+            row.appendChild(tdCargo)
+
+            let inputCargo = document.createElement('input')
+            inputCargo.type = 'text'
+            inputCargo.className = 'form-control'
+            inputCargo.id = 'cargo' + (rows + 1)
+            inputCargo.name = 'cargo[]'
+
+            tdCargo.appendChild(inputCargo)
+
+            //DNI input
+            let tdDni = document.createElement('td')
+            row.appendChild(tdDni)
+
+            let inputDni = document.createElement('input')
+            inputDni.type = 'number'
+            inputDni.className = 'form-control'
+            inputDni.id = 'dni' + (rows + 1)
+            inputDni.name = 'dni[]'
+
+            tdDni.appendChild(inputDni)
+            
+
+            //button delete
+            let tdDelete = document.createElement('td')
+            row.appendChild(tdDelete)
+
+            let buttonDelete = document.createElement('button')
+            buttonDelete.type = 'button'
+            buttonDelete.className = 'btn btn-sm btn-danger'
+            buttonDelete.textContent = 'QUITAR'
+            buttonDelete.onclick = function (currentRow) {
+                vehiculosOfertados.deleteRow(currentRow);
+            }
+
+            tdDelete.appendChild(buttonDelete)
+        }
+
+        function deleteRow(currentRow) {
+            vehiculosOfertados.deleteRow(currentRow);
+        }
+    </script>
+</body>
+</html>
