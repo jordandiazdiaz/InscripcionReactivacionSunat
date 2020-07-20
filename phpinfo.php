@@ -4,5 +4,5 @@ echo 'LOADED EXTENSIONS:<br/>';
 print_r(get_loaded_extensions());
 echo '</pre>';
 echo phpinfo();
- echo 'hola mundo';
+echo 'hola mundo3 33';
 ?>
