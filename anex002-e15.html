@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <title>
+        PROCONT :: AUTORIZACIÓN, REVALIDACIÓN, INCREMENTO O SUSTITUCIÓN (TRANSPORTE DE MERCANCÍAS)
+    </title>
+    <link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap/bootstrap.min.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/site.css" rel="stylesheet" /><link type="text/css" href="https://plaft.sbs.gob.pe/sisdel/css/bootstrap-typeahead.css" rel="stylesheet" />
+    
+    <!--[if lte IE 8]>        
+       <script src="/sisdel/js/html5shiv.js"></script>
+       <script src="/sisdel/js/respond.min.js"></script>  
+    <![endif]-->
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/bootstrap-typeahead.min.js"></script>    
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/jquery.alphanum.js"></script>
+    <script type="text/javascript" src="https://plaft.sbs.gob.pe/sisdel/js/site.js"></script>    
+    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" ></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid navbar-custom" >
+            <div class="navbar-logo" >                
+                <img alt="Logo" src="logo.jpg"  width="1100" height="124"  />
+            </div>                    
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-light navbar-cabecera" >
+        <div class="container-fluid" >
+            <div class="navbar-header navbar-header-custom" >
+                <h4><a href="InicioSesion.aspx"><span style="color:#fff" class="glyphicon glyphicon-home" aria-hidden="true"></span></a> PROCONT :: AUTORIZACIÓN, REVALIDACIÓN, INCREMENTO O SUSTITUCIÓN (TRANSPORTE DE MERCANCÍAS)
+                </h4>
+            </div>
+        </div>
+        </nav>
+        <form action="generar-anexo002-e15.php" method="post">
+            <div class="panel-group">
+
+                <!--Panel: I. Vehículos Ofertados-->
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">
+                        <h2>I. Vehículos Ofertados</h2>
+                        <p class="muted">Si los vehículos ofertados son mayores a 20 unidades, adjuntar la relación de los mismos con los datos solicitados.
+                            Relación de vehículos ofertados, marcar con un aspa (X) los que corresponden a Contrato de Arrendamiento Financiero (C.A.F.) y/o Contrato de Arrendamiento Operativo (C.A.O.):
+                        </p>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Placa del rodaje</th>
+                                    <th>SOAT</th>
+                                    <th>CITV</th>
+                                    <th>C.A.F.</th>
+                                    <th>C.A.O.</th>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="addRow()">+ FILA</button>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody id="vehiculos_ofertados">
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <input type="text" class="form-control" name="placa[]" id="placa1" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" name="soat[]" id="soat1" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" name="citv[]" id="citv1" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" name="caf[]" id="caf1" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" name="cao[]" id="cao1" required>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow()">QUITAR</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label" for="instalacion">La instalación administrativa para el funcionamiento de mi empresa es</label>
+                            <div class="col-sm-5">
+                                <select name="instalacion" id="instalacion" class="form-control" required>
+                                    <option value="propia">Propia</option>
+                                    <option value="alquilada">Alquilada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label" for="domicilio">DOMICILIO</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="domicilio" id="domicilio" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label" for="distrito">Distrito</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="distrito" id="distrito" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label" for="provincia">Provincia</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="provincia" id="provincia" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label" for="departamento">Departamento</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="departamento" id="departamento" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Panel: II. Declaración Jurada-->
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">
+                        <h2>II. Declaración Jurada</h2>
+                        <p class="muted">Declaro bajo juramento que:</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="declaro_no_inabilitado" name="declaracion_jurada[]" value="1">
+                                <label class="form-check-label" for="declaro_no_inabilitado">
+                                1. No me encuentro inhabilitado o suspendido para la prestación del servicio de transporte de mercancías en general.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="declaro_no_sanciones" name="declaracion_jurada[]" value="2">
+                                <label class="form-check-label" for="declaro_no_sanciones">
+                                2. No tengo sanciones de multas impagas con resolución firme.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="declaro_mantenimiento" name="declaracion_jurada[]" value="3">
+                                <label class="form-check-label" for="declaro_mantenimiento">
+                                3. Cumpliré con el mantenimiento preventivo de la flota.
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="declaro_condiciones" name="declaracion_jurada[]" value="4">
+                                <label class="form-check-label" for="declaro_condiciones">
+                                4. Cumplo con las condiciones y requisitos de acceso señalados en la Sección II del RENAT.
+                                </label>
+                            </div>
+                        </div>																																																																																
+                    </div>
+                </div>
+
+                <!--Panel: III. Relación de Conductores-->
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">
+                        <h2>III. Relación de Conductores</h2>
+                        <p class="muted">Especificar según los encabezados la relación de conductores (de carresponder según procedimiento)</p>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Apellidos y Nombres</th>
+                                    <th>Número de DNI</th>
+                                    <th>Edad</th>
+                                    <th>N° de Licencia</th>
+                                    <th>Categoría</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="conductor_nombres1" id="conductor_nombres1" class="form-control" required>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_dni1" id="conductor_dni1" class="form-control" required>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_edad1" id="conductor_edad1" class="form-control" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_licencia1" id="conductor_licencia1" class="form-control" required>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_categoria1" id="conductor_categoria1" class="form-control" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="conductor_nombres2" id="conductor_nombres2" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_dni2" id="conductor_dni2" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_edad2" id="conductor_edad2" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_licencia2" id="conductor_licencia2" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_categoria2" id="conductor_categoria2" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="conductor_nombres3" id="conductor_nombres3" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_dni3" id="conductor_dni3" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_edad3" id="conductor_edad3" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_licencia3" id="conductor_licencia3" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_categoria3" id="conductor_categoria3" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="conductor_nombres4" id="conductor_nombres4" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_dni4" id="conductor_dni4" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_edad4" id="conductor_edad4" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_licencia4" id="conductor_licencia4" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_categoria4" id="conductor_categoria4" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="conductor_nombres5" id="conductor_nombres5" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_dni5" id="conductor_dni5" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="conductor_edad5" id="conductor_edad5" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_licencia5" id="conductor_licencia5" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="conductor_categoria5" id="conductor_categoria5" class="form-control">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>																																																																															
+                    </div>
+                </div>
+
+                <!--Panel: II. Declaración Jurada-->
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-custom">
+                        <h2>Datos del Solicitante</h2>
+                        <p class="muted">En honor a la verdad y al amparo del principio de presunción de veracidad estipulada en el numeral 1.7 del Art. IV del Texto Único Ordenado de la Ley Nº 27444 del Procedimiento Administrativo General, aprobado por Decreto Supremo N° 006-2017-JUS, declaro Bajo Responsabilidad, que los datos consignados en el anverso de este anexo son ciertos y que conozco las sanciones a los que seré sometido(a) en caso de haber anotado / adjuntado información falsa:</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label" for="solicita_nombres">Nombres y Apellidos</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="solicita_nombres" id="solicita_nombres" class="form-control" required>
+                            </div>
+                        </div>																																																																										
+                        <div class="form-group">
+                            <label class="col-sm-7 control-label" for="solicita_dni">D.N.I.</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="solicita_dni" id="solicita_dni" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-sm btn-success">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </form>   
+    </div>
+
+    <script>
+        const vehiculosOfertados = document.getElementById('vehiculos_ofertados')
+
+        function addRow() {
+            
+            let row = document.createElement('tr')
+            let rows = vehiculosOfertados.getElementsByTagName('tr').length;
+
+            vehiculosOfertados.appendChild(row)
+            
+            let tdItem = document.createElement('td')
+            row.appendChild(tdItem)
+
+            //Item input
+            /*let inputItem = document.createElement('input')
+            inputItem.type = 'text'
+            inputItem.className = 'form-control'
+            inputItem.id = 'item' + (rows + 1)
+            inputItem.name = 'item'
+            inputItem.value = rows + 1
+            inputItem.readOnly = true*/
+
+            tdItem.textContent = rows + 1
+
+            //Placa input
+            let tdPlaca = document.createElement('td')
+            row.appendChild(tdPlaca)
+
+            let inputPlaca = document.createElement('input')
+            inputPlaca.type = 'text'
+            inputPlaca.className = 'form-control'
+            inputPlaca.id = 'placa' + (rows + 1)
+            inputPlaca.name = 'placa[]'
+
+            tdPlaca.appendChild(inputPlaca)
+            
+            //SOAT input
+            let tdSoat = document.createElement('td')
+            row.appendChild(tdSoat)
+
+            let inputSoat = document.createElement('input')
+            inputSoat.type = 'text'
+            inputSoat.className = 'form-control'
+            inputSoat.id = 'soat' + (rows + 1)
+            inputSoat.name = 'soat[]'
+
+            tdSoat.appendChild(inputSoat)
+            
+            //CITV input
+            let tdCitv = document.createElement('td')
+            row.appendChild(tdCitv)
+
+            let inputCitv = document.createElement('input')
+            inputCitv.type = 'text'
+            inputCitv.className = 'form-control'
+            inputCitv.id = 'citv' + (rows + 1)
+            inputCitv.name = 'citv[]'
+
+            tdCitv.appendChild(inputCitv)
+            
+            //CAF input
+            let tdCaf = document.createElement('td')
+            row.appendChild(tdCaf)
+
+            let inputCaf = document.createElement('input')
+            inputCaf.type = 'text'
+            inputCaf.className = 'form-control'
+            inputCaf.id = 'caf' + (rows + 1)
+            inputCaf.name = 'caf[]'
+
+            tdCaf.appendChild(inputCaf)
+            
+            //CAO input
+            let tdCao = document.createElement('td')
+            row.appendChild(tdCao)
+
+            let inputCao = document.createElement('input')
+            inputCao.type = 'text'
+            inputCao.className = 'form-control'
+            inputCao.id = 'cao' + (rows + 1)
+            inputCao.name = 'cao[]'
+
+            tdCao.appendChild(inputCao)
+
+            //button delete
+            let tdDelete = document.createElement('td')
+            row.appendChild(tdDelete)
+
+            let buttonDelete = document.createElement('button')
+            buttonDelete.type = 'button'
+            buttonDelete.className = 'btn btn-sm btn-danger'
+            buttonDelete.textContent = 'QUITAR'
+            buttonDelete.onclick = function (currentRow) {
+                vehiculosOfertados.deleteRow(currentRow);
+            }
+
+            tdDelete.appendChild(buttonDelete)
+        }
+
+        function deleteRow(currentRow) {
+            vehiculosOfertados.deleteRow(currentRow);
+        }
+    </script>
+</body>
+</html>
