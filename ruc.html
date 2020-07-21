@@ -1,0 +1,43 @@
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+/*
+Autor: Jordan Diaz Diaz
+Descripcion : Obtiene Datos de la Sunat o Reniec de acuerdo al numero de documento ingresado
+Fecha: 20/07/2020
+*/
+$(document).ready(function () {
+
+
+
+    // Create an FormData object
+    var data = new FormData();
+    // If you want to add an extra field for the FormData
+    data.append("action", "getnumero");
+    data.append("numero", "20100130204");
+
+    // disabled the submit button
+    //$("#btnSubmit").prop("disabled", true);
+
+    $.ajax({
+        type: "POST",
+        enctype: 'multipart/form-data',
+        url: "https://incared.com/api/apirest",
+        data: data,
+        processData: false,
+        contentType: false,
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            console.log("SUCCESS : ", data);
+        },
+        error: function (e) {
+            console.log("ERROR : ", e);
+        }
+    });
+
+
+
+});
+</script>
