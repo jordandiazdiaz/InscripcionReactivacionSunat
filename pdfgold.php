@@ -82,15 +82,15 @@ $pdf->Cell(30, 10, 'RUC: ' . $ruc , 0, 0);
 $pdf->Ln();
 
 $pdf->SetX(45);
-$pdf->Cell(30, 10, $razon_social , 0, 0);
-$pdf->Ln();
+$pdf->MultiCell(120, 5, $razon_social , 0, 'L');
+
 
 $pdf->SetX(45);
-$pdf->Cell(50, 10, utf8_decode('Nª LIQUIDACION: ' . $numero_liq) , 0, 0);
+$pdf->Cell(50, 10, utf8_decode('Nª LIQUIDACIÓN: ' . $numero_liq) , 0, 0);
 
-$pdf->Ln(20);
+$pdf->Ln(15);
 
-$pdf->Rect(45, 110, 120, 70);
+$pdf->Rect(45, $pdf->GetY(), 120, 70);
 $pdf->SetX(45);
 $pdf->Cell(60, 10, 'Precio internacional' , 0, 0);
 $pdf->Cell(30, 10, $precio_inter , 1, 0, 'C');
