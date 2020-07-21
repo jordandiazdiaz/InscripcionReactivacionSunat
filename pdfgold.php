@@ -57,62 +57,77 @@ $precio_oro_peru = $_POST['precio_oro_peru'];
 
 //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='')
 
+$pdf->SetX(45);
 $pdf->Cell(60, 10, 'GOLD' , 1, 0, 'C');
 $pdf->Cell(60, 10, 'PRECIO DOLAR' , 1, 0, 'C');
 $pdf->Ln();
+
+$pdf->SetX(45);
 $pdf->Cell(30, 10, 'AM' , 1, 0, 'C');
 $pdf->Cell(30, 10, 'PM' , 1, 0, 'C');
 $pdf->Cell(30, 10, 'COMPRA' , 1, 0, 'C');
 $pdf->Cell(30, 10, 'VENTA' , 1, 0, 'C');
 $pdf->Ln();
+
+$pdf->SetX(45);
 $pdf->Cell(30, 10, $kitco_am , 1, 0, 'C');
 $pdf->Cell(30, 10, $kitco_pm , 1, 0, 'C');
 $pdf->Cell(30, 10, $sunat_precio_compra , 1, 0, 'C');
 $pdf->Cell(30, 10, $sunat_precio_venta , 1, 0, 'C');
 
-$pdf->Ln();
-$pdf->Ln();
+$pdf->Ln(20);
 //Ruc
+$pdf->SetX(45);
 $pdf->Cell(30, 10, 'RUC: ' . $ruc , 0, 0);
 $pdf->Ln();
+
+$pdf->SetX(45);
 $pdf->Cell(30, 10, $razon_social , 0, 0);
 $pdf->Ln();
 
+$pdf->SetX(45);
 $pdf->Cell(50, 10, utf8_decode('Nª LIQUIDACION: ' . $numero_liq) , 0, 0);
 
-$pdf->Ln();
-$pdf->Ln();
+$pdf->Ln(20);
 
+$pdf->Rect(45, 110, 120, 70);
+$pdf->SetX(45);
 $pdf->Cell(60, 10, 'Precio internacional' , 0, 0);
 $pdf->Cell(30, 10, $precio_inter , 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Dólares/Onza') , 0, 0, 'L');
 $pdf->Ln();
 
+$pdf->SetX(45);
 $pdf->Cell(60, 10, 'Tipo de Cambio' , 0, 0);
 $pdf->Cell(30, 10, $tipo_cambio , 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Soles/Dólar') , 0, 0, 'L');
 $pdf->Ln();
 
+$pdf->SetX(45);
 $pdf->Cell(60, 10, 'Peso del Oro' , 0, 0);
 $pdf->Cell(30, 10, $peso_oro , 1, 0, 'C');
 $pdf->Cell(30, 10, 'Gramos' , 0, 0, 'L');
 $pdf->Ln();
 
+$pdf->SetX(45);
 $pdf->Cell(60, 10, 'Pureza del Oro' , 0, 0);
 $pdf->Cell(30, 10, $pureza_oro , 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Milésimos') , 0, 0, 'L');
 $pdf->Ln();
 
+$pdf->SetX(45);
 $pdf->Cell(60, 10, 'Descuento' , 0, 0);
 $pdf->Cell(30, 10, $descuento , 1, 0, 'C');
 $pdf->Cell(30, 10, '%' , 0, 0, 'L');
 $pdf->Ln();
 
+$pdf->SetX(45);
 $pdf->Cell(60, 10, utf8_decode('SPOT Detracción') , 0, 0);
 $pdf->Cell(30, 10, $detraccion , 1, 0, 'C');
 $pdf->Cell(30, 10, '%' , 0, 0, 'L');
 $pdf->Ln();
 
+$pdf->SetX(45);
 $pdf->Cell(60, 10, utf8_decode('Precio del Oro Perú') , 0, 0);
 $pdf->Cell(30, 10, $precio_oro_peru , 1, 0, 'C');
 $pdf->Cell(30, 10, 'Soles' , 0, 0, 'L');
