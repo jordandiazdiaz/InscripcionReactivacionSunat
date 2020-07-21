@@ -187,32 +187,40 @@
                                 <div class="form-group">
                                     <label for="precio_inter" class="col-sm-4 control-label">Precio Internacional</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control input-sm" id="precio_inter" name="precio_inter" aria-label="help_precio_inter"  onkeyup="getPriceGold()">
-                                        <span id="help_precio_inter" class="help-block">Dólares/Onza</span>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-sm" id="precio_inter" name="precio_inter" aria-label="help_precio_inter"  onkeyup="getPriceGold()">
+                                            <div class="input-group-addon">Dólares/Onza</div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="tipo_cambio" class="col-sm-4 control-label">Tipo de Cambio</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control input-sm" id="tipo_cambio" name="tipo_cambio" aria-label="help_tipo_cambio" onkeyup="getPriceGold()">
-                                        <span id="help_tipo_cambio" class="help-block">Soles/Dólares</span>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-sm" id="tipo_cambio" name="tipo_cambio" aria-label="help_tipo_cambio" onkeyup="getPriceGold()">
+                                            <div class="input-group-addon">Soles/Dólares</div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="peso_oro" class="col-sm-4 control-label">Peso de Oro</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control input-sm" id="peso_oro" name="peso_oro" aria-label="help_peso_oro" onkeyup="getPriceGold()">
-                                        <span id="help_peso_oro" class="help-block">Gramos</span>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-sm" id="peso_oro" name="peso_oro" aria-label="help_peso_oro" onkeyup="getPriceGold()">
+                                            <div class="input-group-addon">Gramos</div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="pureza_oro" class="col-sm-4 control-label">Pureza de Oro</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control input-sm" id="pureza_oro" name="pureza_oro" aria-label="help_pureza_oro" onkeyup="getPriceGold()">
-                                        <span id="help_pureza_oro" class="help-block">Milésimos</span>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-sm" id="pureza_oro" name="pureza_oro" aria-label="help_pureza_oro" onkeyup="getPriceGold()">
+                                            <div class="input-group-addon">Milésimos</div>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -239,8 +247,10 @@
                                 <div class="form-group">
                                     <label for="precio_oro_peru" class="col-sm-4 control-label">Precio del Oro en el Perú</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control input-sm" id="precio_oro_peru" name="precio_oro_peru" aria-label="help_precio_oro_peru" onclick="getPriceGold()" readonly>
-                                        <span id="help_precio_oro_peru" class="help-block">Soles</span>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-sm" id="precio_oro_peru" name="precio_oro_peru" aria-label="help_precio_oro_peru" onclick="getPriceGold()" readonly>
+                                            <div class="input-group-addon">Soles</div>
+                                        </div>
                                     </div>
                                 </div>
 
