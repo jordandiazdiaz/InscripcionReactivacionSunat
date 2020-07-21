@@ -70,6 +70,9 @@
         .first {
             margin-right: 1rem;
         }
+        .form-group {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -159,7 +162,7 @@
                                     <label for="ruc" class="col-sm-4 control-label">RUC</label>
                                     <div class="col-sm-8">
                                         <div class="input-group search-ruc">
-                                            <input type="number" class="form-control" id="ruc" name="ruc" placeholder="RUC (11 dígitos)">
+                                            <input type="number" class="form-control input-sm" id="ruc" name="ruc" placeholder="RUC (11 dígitos)">
                                             <button type="button" onclick="getRuc()" class="btn btn-success">BUSCAR</button>
                                         </div>
                                     </div>
@@ -168,14 +171,14 @@
                                 <div class="form-group">
                                     <label for="razon_social" class="col-sm-4 control-label">Razón Social</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="razon_social" name="razon_social" placeholder="Razón Social">
+                                        <input type="text" class="form-control input-sm" id="razon_social" name="razon_social" placeholder="Razón Social">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="numero_liq" class="col-sm-4 control-label">N° Liquidación</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="numero_liq" name="numero_liq" placeholder="Número de Liq" readonly value="001-<?= $liq ?>">
+                                        <input type="text" class="form-control input-sm" id="numero_liq" name="numero_liq" placeholder="Número de Liq" readonly value="001-<?= $liq ?>">
                                     </div>
                                 </div>
 
@@ -184,7 +187,7 @@
                                 <div class="form-group">
                                     <label for="precio_inter" class="col-sm-4 control-label">Precio Internacional</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="precio_inter" name="precio_inter" aria-label="help_precio_inter"  onkeyup="getPriceGold()">
+                                        <input type="text" class="form-control input-sm" id="precio_inter" name="precio_inter" aria-label="help_precio_inter"  onkeyup="getPriceGold()">
                                         <span id="help_precio_inter" class="help-block">Dólares/Onza</span>
                                     </div>
                                 </div>
@@ -192,7 +195,7 @@
                                 <div class="form-group">
                                     <label for="tipo_cambio" class="col-sm-4 control-label">Tipo de Cambio</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="tipo_cambio" name="tipo_cambio" aria-label="help_tipo_cambio" onkeyup="getPriceGold()">
+                                        <input type="text" class="form-control input-sm" id="tipo_cambio" name="tipo_cambio" aria-label="help_tipo_cambio" onkeyup="getPriceGold()">
                                         <span id="help_tipo_cambio" class="help-block">Soles/Dólares</span>
                                     </div>
                                 </div>
@@ -200,7 +203,7 @@
                                 <div class="form-group">
                                     <label for="peso_oro" class="col-sm-4 control-label">Peso de Oro</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="peso_oro" name="peso_oro" aria-label="help_peso_oro" onkeyup="getPriceGold()">
+                                        <input type="text" class="form-control input-sm" id="peso_oro" name="peso_oro" aria-label="help_peso_oro" onkeyup="getPriceGold()">
                                         <span id="help_peso_oro" class="help-block">Gramos</span>
                                     </div>
                                 </div>
@@ -208,7 +211,7 @@
                                 <div class="form-group">
                                     <label for="pureza_oro" class="col-sm-4 control-label">Pureza de Oro</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="pureza_oro" name="pureza_oro" aria-label="help_pureza_oro" onkeyup="getPriceGold()">
+                                        <input type="text" class="form-control input-sm" id="pureza_oro" name="pureza_oro" aria-label="help_pureza_oro" onkeyup="getPriceGold()">
                                         <span id="help_pureza_oro" class="help-block">Milésimos</span>
                                     </div>
                                 </div>
@@ -217,7 +220,7 @@
                                     <label for="descuento" class="col-sm-4 control-label">Descuentos</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="descuento" name="descuento" onkeyup="getPriceGold()">
+                                            <input type="text" class="form-control input-sm" id="descuento" name="descuento" onkeyup="getPriceGold()">
                                             <div class="input-group-addon">%</div>
                                         </div>
                                     </div>
@@ -227,7 +230,7 @@
                                     <label for="detraccion" class="col-sm-4 control-label">SPOT Detracción</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="detraccion" name="detraccion" onkeyup="getPriceGold()">
+                                            <input type="text" class="form-control input-sm" id="detraccion" name="detraccion" onkeyup="getPriceGold()">
                                             <div class="input-group-addon">%</div>
                                         </div>
                                     </div>
@@ -236,7 +239,7 @@
                                 <div class="form-group">
                                     <label for="precio_oro_peru" class="col-sm-4 control-label">Precio del Oro en el Perú</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="precio_oro_peru" name="precio_oro_peru" aria-label="help_precio_oro_peru" onclick="getPriceGold()" readonly>
+                                        <input type="text" class="form-control input-sm" id="precio_oro_peru" name="precio_oro_peru" aria-label="help_precio_oro_peru" onclick="getPriceGold()" readonly>
                                         <span id="help_precio_oro_peru" class="help-block">Soles</span>
                                     </div>
                                 </div>
@@ -311,7 +314,7 @@
                 (precio_inter.value / 31.1035) *
                 tipo_cambio.value *
                 peso_oro.value *
-                (pureza_oro.value / 1000) *
+                (pureza_oro.value / 100) *
                 ((100 - descuento.value - detraccion.value) / 100)
 
             precio_oro_peru.value = Math.round((precio + Number.EPSILON) * 100) / 100
