@@ -236,7 +236,7 @@
                                 <div class="form-group">
                                     <label for="precio_oro_peru" class="col-sm-4 control-label">Precio del Oro en el Perú</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="precio_oro_peru" name="precio_oro_peru" aria-label="help_precio_oro_peru" onkeyup="getPriceGold()" readonly>
+                                        <input type="text" class="form-control" id="precio_oro_peru" name="precio_oro_peru" aria-label="help_precio_oro_peru" onclick="getPriceGold()" readonly>
                                         <span id="help_precio_oro_peru" class="help-block">Soles</span>
                                     </div>
                                 </div>
@@ -317,6 +317,8 @@
             precio_oro_peru.value = Math.round((precio + Number.EPSILON) * 100) / 100
             
         }
+
+
     </script>
 </body>
 </html>
