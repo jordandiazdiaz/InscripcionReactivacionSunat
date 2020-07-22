@@ -219,7 +219,7 @@
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <input type="text" class="form-control input-sm" id="pureza_oro" name="pureza_oro" aria-label="help_pureza_oro" onkeyup="getPriceGold()">
-                                            <div class="input-group-addon">Milésimos</div>
+                                            <div class="input-group-addon">%</div>
                                         </div>
                                     </div>
                                 </div>
